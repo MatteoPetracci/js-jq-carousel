@@ -72,3 +72,18 @@ function changePrev() {
     prevIcon.addClass('active');
   }
 }
+
+// Aggiunta la possibilità di cambiare foto con event.which 39 corrisponde a destra  e 37 sinistra 
+
+$(document).keydown(
+  function (){
+    if (event.which == 39) {
+      changeNext();
+    } else if (event.which == 37) {
+      changePrev();
+    }
+  }
+);
+
+
+// console.log(event.which);
