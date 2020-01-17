@@ -51,5 +51,24 @@ function changeNext() {
 // grazie a questo metodo creare una funzione che permetta di scorrere all'indietro le immagini
 
 function changePrev() {
-  
+  var imgActive = $('img.active');
+  var prevImg = imgActive.prev();
+  var iconActive = $('i.active');
+  var prevIcon = iconActive.prev();
+  var firstImg = $('img.last');
+  var firstIcon = $('i.last');
+
+// ora a differenza di prima controllare se è contenuta in imgActive la classe first
+
+  if (imgActive.hasClass('first')) {
+    imgActive.removeClass('active');
+    firstImg.addClass('active');
+    iconActive.removeClass('active');
+    firstIcon.addClass('active');
+  } else {
+    imgActive.removeClass('active');
+    prevImg.addClass('active');
+    iconActive.removeClass('active');
+    prevIcon.addClass('active');
+  }
 }
